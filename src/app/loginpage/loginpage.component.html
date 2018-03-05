@@ -1,5 +1,5 @@
 <div class="panel ">
-	<form class="form" [formGroup]="form">
+	<form class="form" [formGroup]="form" (submit)="onSubmit()">
 		<div class="panel-heading justify-content-center d-flex logo-heading">
 			<h3>Вход в систему</h3>
 		</div>
@@ -11,11 +11,15 @@
 				<input class="form-control-lg form-control" type="password" formControlName="password" placeholder="Пароль" (keydown)="removeInvalid()">
 			</div>
 			<div class="form-check">
-				<input type="checkbox" formControlName="remember" class="form-check-input" id="remember" [(ngModel)]="invalid">
+				<input type="checkbox" formControlName="remember" class="form-check-input" id="remember">
 				<label class="form-check-label" for="remember">Запомнить меня</label>
 			</div>
 			<div class="w100 justify-content-center d-flex button">
-				<input class="btn btn-lg btn-block " [class.btn-danger]="invalid" [class.btn-primary]="!invalid" value="{{invalid?'Данные неверны!':'Вход'}}" type="submit" [disabled]="form.invalid || invalid">
+				<button class="btn btn-lg btn-block "
+						[class.btn-danger]="invalid"
+						[class.btn-primary]="!invalid"
+						type="submit"
+						[disabled]="form.invalid || invalid || loading">{{invalid?'Данные неверны!':'Вход'}}</button>
 			</div>
 		</div>
 	</form>
