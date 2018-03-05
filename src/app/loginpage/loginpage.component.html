@@ -1,0 +1,22 @@
+<div class="panel ">
+	<form class="form" [formGroup]="form">
+		<div class="panel-heading justify-content-center d-flex logo-heading">
+			<h3>Вход в систему</h3>
+		</div>
+		<div class="panel-center">
+			<div class="form-group">
+				<input class="form-control-lg form-control" type="text" formControlName="login" placeholder="Логин" (keydown)="removeInvalid()">
+			</div>
+			<div class="form-group">
+				<input class="form-control-lg form-control" type="password" formControlName="password" placeholder="Пароль" (keydown)="removeInvalid()">
+			</div>
+			<div class="form-check">
+				<input type="checkbox" formControlName="remember" class="form-check-input" id="remember" [(ngModel)]="invalid">
+				<label class="form-check-label" for="remember">Запомнить меня</label>
+			</div>
+			<div class="w100 justify-content-center d-flex button">
+				<input class="btn btn-lg btn-block " [class.btn-danger]="invalid" [class.btn-primary]="!invalid" value="{{invalid?'Данные неверны!':'Вход'}}" type="submit" [disabled]="form.invalid || invalid">
+			</div>
+		</div>
+	</form>
+</div>
