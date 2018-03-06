@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {FormGroup, FormControl, Validators, NgForm, NgControl, AbstractControl} from '@angular/forms';
 import {LoginServiceService} from '../login-service.service';
 
 @Component({
@@ -8,7 +8,6 @@ import {LoginServiceService} from '../login-service.service';
     styleUrls: ['./loginpage.component.scss']
 })
 export class LoginpageComponent implements OnInit {
-
     invalid: boolean;
     loading: boolean;
     form: FormGroup;
@@ -19,7 +18,7 @@ export class LoginpageComponent implements OnInit {
     ngOnInit() {
         this.form = new FormGroup({
             login: new FormControl('', [Validators.required, Validators.minLength(4)]),
-            password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+            password: new FormControl(''),
             remember: new FormControl('')
         });
 
@@ -43,4 +42,6 @@ export class LoginpageComponent implements OnInit {
 
         });
     }
+
+
 }

@@ -1,14 +1,14 @@
 <div class="panel ">
-	<form class="form" [formGroup]="form" (submit)="onSubmit()">
+	<form class="form" [formGroup]="form"  (ngSubmit)="onSubmit()"  >
 		<div class="panel-heading justify-content-center d-flex logo-heading">
 			<h3>Вход в систему</h3>
 		</div>
 		<div class="panel-center">
 			<div class="form-group">
-				<input class="form-control-lg form-control" type="text" formControlName="login" placeholder="Логин" (keydown)="removeInvalid()">
+				<input class="form-control-lg form-control"   name="login" type="text" formControlName="login" placeholder="Логин" (keydown)="removeInvalid()">
 			</div>
 			<div class="form-group">
-				<input class="form-control-lg form-control" type="password" formControlName="password" placeholder="Пароль" (keydown)="removeInvalid()">
+				<input class="form-control-lg form-control" name="password"  type="password" formControlName="password" placeholder="Пароль" (keydown)="removeInvalid()">
 			</div>
 			<div class="form-check">
 				<input type="checkbox" formControlName="remember" class="form-check-input" id="remember">
@@ -19,7 +19,7 @@
 						[class.btn-danger]="invalid"
 						[class.btn-primary]="!invalid"
 						type="submit"
-						[disabled]="form.invalid || invalid || loading">{{invalid?'Данные неверны!':'Вход'}}</button>
+						[disabled]="form.invalid|| invalid  || loading ">{{invalid?'Данные неверны!':'Вход'}}</button>
 			</div>
 		</div>
 	</form>
