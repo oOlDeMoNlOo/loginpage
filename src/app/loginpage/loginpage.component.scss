@@ -41,18 +41,22 @@ form {
     }
   }
   .logo-heading {
+    .svg{
+      height: 56px;
+    }
     border-radius: 1px 1px 0 0;
-    padding-top: 10px !important;
-    padding-bottom: 50px !important;
-    background: url(https://image.ibb.co/j5qvTS/logo.jpg) no-repeat !important;
-    background-size: cover !important;
+    background: #673ab7 !important;
+    z-index: 5000;
+
+    //background: url(https://image.ibb.co/j5qvTS/logo.jpg) no-repeat !important;
+    //background-size: cover !important;
   }
   .panel-heading {
-    padding: 40px 20px;
-    background: #cccccc;
     color: #fff;
+    padding: 20px;
+    text-align: center;
     h3{
-      text-align: center;
+      padding-top: 0px;
     }
   }
 
