@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, NgForm, NgControl, AbstractControl} from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {LoginServiceService} from '../login-service.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class LoginpageComponent implements OnInit {
     ngOnInit() {
         this.form = new FormGroup({
             login: new FormControl('', [Validators.required, Validators.minLength(4)]),
-            password: new FormControl(''),
+            password: new FormControl('', [Validators.required, Validators.minLength(4)]),
             remember: new FormControl('')
         });
 

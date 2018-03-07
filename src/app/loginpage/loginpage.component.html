@@ -1,24 +1,35 @@
 <div class="panel ">
 	<form class="form" [formGroup]="form"  (ngSubmit)="onSubmit()"  >
-		<div class="panel-heading justify-content-center d-flex logo-heading">
+		<mat-card>
+		<div class="panel-heading logo-heading">
 			<h3>Вход в систему</h3>
 		</div>
 		<div class="panel-center">
-			<mat-form-field>
+			<mat-form-field class="full">
 				<input matInput name="login" formControlName="login" placeholder="Логин" (keydown)="removeInvalid()">
+				<mat-error *ngIf="form.get('login').invalid">
+					Должен состоять из 4 символов или больше.
+				</mat-error>
 			</mat-form-field>
-			<mat-form-field>
+			<mat-form-field class="full">
 				<input matInput class="form-control-lg form-control" name="password"  type="password" formControlName="password" placeholder="Пароль" (keydown)="removeInvalid()">
+				<mat-error *ngIf="form.get('password').invalid">
+					Должен состоять из 4 символов или больше.
+				</mat-error>
 			</mat-form-field>
 			<div class="form-check">
 				<mat-checkbox formControlName="remember" class="form-check-input">Запомнить меня</mat-checkbox>
+
 			</div>
-			<div class="w100 justify-content-center d-flex button">
-				<button class="btn btn-lg btn-block " mat-raised-button
-						[color]="invalid?'primary':'warn'"
+			<div class="w100 button ">
+				<button class="full " mat-raised-button
+						[class.button-error]="invalid"
+						color="primary"
 						type="submit"
-						[disabled]="form.invalid|| invalid  || loading ">{{invalid?'Данные неверны!':'Вход'}}</button>
+						[disabled]="form.invalid|| invalid  || loading ">{{invalid?'Неверный логин или пароль!':'Вход'}}</button>
+				<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 			</div>
 		</div>
+		</mat-card>
 	</form>
 </div>

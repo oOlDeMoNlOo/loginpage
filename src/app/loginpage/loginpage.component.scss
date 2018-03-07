@@ -1,10 +1,11 @@
-:host{
+:host {
   width: 100%;
   height: 100%;
   background: #f5f5f5;
   font-family: 'Roboto', sans-serif;
 }
-.panel{
+
+.panel {
   width: 100%;
   height: 100%;
   background: #f5f5f5;
@@ -13,48 +14,65 @@
   justify-content: center;
   align-items: center;
 }
-form{
-    width: auto;
-    border-radius: 6px;
-    background: #fff;   
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
-    box-sizing:  border-box;
-    input[type="text"]{
-      background: #fafafa;
+
+form {
+  mat-card {
+    padding: 0;
+
+  }
+  width: auto;
+  background: #fff;
+  box-sizing: border-box;
+  input[type="text"] {
+    background: #fafafa;
+  }
+  .panel-center {
+    .button-error{
+      background-color: #f44336;
+      color: #fff;
     }
-    .panel-center{
-      padding: 30px;
-      .button{
-        padding-top: 20px;
-        z-index: 999999;
-      }
+    padding: 30px 30px 50px 30px;
+    .button {
+      padding-top: 20px;
+      z-index: 999999;
     }
-    .logo-heading{
-      padding-top:10px !important;
-      padding-bottom: 50px !important;
-      background: url(https://image.ibb.co/j5qvTS/logo.jpg) no-repeat !important ;
-      background-size: cover !important;
+    .full {
+      width: 100%;
     }
-    .panel-heading{
-        border-radius: 6px 6px 0px 0px;
-        padding: 40px 20px;
-        background: #cccccc;
-        color: #fff;
+  }
+  .logo-heading {
+    border-radius: 1px 1px 0 0;
+    padding-top: 10px !important;
+    padding-bottom: 50px !important;
+    background: url(https://image.ibb.co/j5qvTS/logo.jpg) no-repeat !important;
+    background-size: cover !important;
+  }
+  .panel-heading {
+    padding: 40px 20px;
+    background: #cccccc;
+    color: #fff;
+    h3{
+      text-align: center;
     }
+  }
 
 }
+
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {  }
+@media (min-width: 576px) {
+}
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
-  input[type="text"]{
+@media (min-width: 768px) {
+  input[type="text"] {
     width: 360px;
   }
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {  }
+@media (min-width: 992px) {
+}
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+}

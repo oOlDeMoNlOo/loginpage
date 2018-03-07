@@ -7,7 +7,9 @@ import {LoginpageComponent} from './loginpage/loginpage.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoginServiceService} from './login-service.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatProgressBarModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/mater
         BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
-        MatInputModule
+        MatInputModule,
+        MatProgressBarModule,
+        MatCardModule
     ],
     providers: [LoginServiceService],
     bootstrap: [AppComponent]
