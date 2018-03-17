@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {LoginPageSer, ResponseLogin} from './loginpage/login-page';
+import {ResponseLogin} from './loginpage';
 
 @Injectable()
-export class LoginServiceService implements LoginPageSer {
+export class LoginPageService {
 
     constructor() {
     }
@@ -14,7 +14,7 @@ export class LoginServiceService implements LoginPageSer {
                 if (rand) {
                     resolve({status: rand});
                 } else {
-                    reject({status: rand, error: "Данные неверны!"});
+                    reject({status: rand, error: 'Данные неверны!'});
                 }
             }, 1000);
         }));
