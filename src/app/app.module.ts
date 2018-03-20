@@ -1,7 +1,14 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {LoginpageModule} from './mymodules/loginpage/loginpage.module';
+import {LoginPageModule} from './mymodules/loginpage/loginpage.module';
+import {AppRoutingModule} from './app-routing.module';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
+import {ConfigServer} from './config/server';
+import {SocketIoService} from './socket-io.service';
+
+const config: SocketIoConfig = {url: `${ConfigServer.HOST}:${ConfigServer.PORT}`};
+
 
 @NgModule({
     declarations: [
@@ -9,9 +16,12 @@ import {LoginpageModule} from './mymodules/loginpage/loginpage.module';
     ],
     imports: [
         BrowserModule,
-        LoginpageModule
+        LoginPageModule,
+        AppRoutingModule,
+        SocketIoModule.forRoot(config)
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [SocketIoService]
 })
 export class AppModule {
 }

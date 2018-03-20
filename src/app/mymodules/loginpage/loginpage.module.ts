@@ -6,6 +6,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatProgressBarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginPageService} from './loginpage.service';
+import {LoginPageRoutingModule} from './loginpage-routing.module';
 
 @NgModule({
     imports: [
@@ -16,13 +17,13 @@ import {LoginPageService} from './loginpage.service';
         MatCheckboxModule,
         MatInputModule,
         MatProgressBarModule,
-        MatCardModule
-    ],
+        MatCardModule,
+        LoginPageRoutingModule],
     declarations: [
         LoginpageComponent
     ],
     providers: [LoginPageService],
     exports: [LoginpageComponent]
 })
-export class LoginpageModule {
+export class LoginPageModule {
 }

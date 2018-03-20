@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {LoginPageService} from './loginpage.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-loginpage',
@@ -33,14 +34,13 @@ export class LoginpageComponent implements OnInit {
     onSubmit() {
         this.loading = true;
         this.service.login(this.form.value['login'], this.form.value['password'], this.form.value['remember'])
-            .then(value => {
+            .subscribe(value => {
                 delete this.loading;
-                this.invalid = value.status;
-            }).catch(reason => {
+                this.invalid = !value.status;
+            }, (reason => {
             delete this.loading;
-            this.invalid = reason.status;
-
-        });
+            this.invalid = !reason.status;
+        }));
     }
 
 
